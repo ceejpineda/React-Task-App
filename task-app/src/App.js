@@ -12,7 +12,8 @@ class App extends Component {
 
     this.state = {
       task: {
-            text: '', 
+            text: '',
+            number: 1,
             id:uniqid()
             },
       tasks: [],
@@ -22,7 +23,8 @@ class App extends Component {
   handleChange = (e) =>{
     this.setState({
       task: { 
-        text: e.target.value, 
+        text: e.target.value,
+        number: this.state.task.number,
         id: this.state.task.id,
       },
     });
@@ -34,6 +36,7 @@ class App extends Component {
       tasks: this.state.tasks.concat(this.state.task),
       task: {
             text: '',
+            number: this.state.task.number + 1,
             id: uniqid()
             },
     });

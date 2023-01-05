@@ -4,12 +4,17 @@ const Overview = (props) =>{
     const { tasks } = props;
 
     return (
-        <ul>
+        <div>
             {tasks?.map((task) => {
-                return <li key={task.id}>{task.text}</li>;
+                return (
+                    <span key={task.id}>
+                        <p>{task.number}. {task.text}</p> 
+                        <button>Delete</button>
+                    </span>
+                );
             })}
-        </ul>
+        </div>
     );
 };
 
-export default Overview;
+export default Overview; 
